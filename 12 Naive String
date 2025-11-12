@@ -1,0 +1,5 @@
+## Perform pattern string pattern of length m. Find all starting indices i in the text such that the substring text [i:i+m] 
+is exactly equal to the pattern, using the Naive String Matching Algorithm approach.
+## Using Python
+
+
