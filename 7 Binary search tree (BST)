@@ -1,4 +1,4 @@
-// Implement binary search tree and perform following operations (any three)
+## Implement binary search tree and perform following operations (any three)
 a) Insert
 b) Delete a node 
 c) Search particular node 
@@ -6,7 +6,7 @@ d) Traversal (Inorder, Preorder)
 e) Display leaf nodes. 
 f) Traversal (Preorder, Postorder) 
 g) Display max and min node.
-Using Python
+## Using Python
 
 
 
