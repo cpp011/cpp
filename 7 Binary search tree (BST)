@@ -1,0 +1,89 @@
+// Implement binary search tree and perform following operations (any three)
+a) Insert
+b) Delete a node 
+c) Search particular node 
+d) Traversal (Inorder, Preorder)
+e) Display leaf nodes. 
+f) Traversal (Preorder, Postorder) 
+g) Display max and min node.
+Using Python
+
+
+
+class Node:
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
+
+def insert(root, key):
+    if root is None:
+        return Node(key)
+    if key < root.key:
+        root.left = insert(root.left, key)
+    elif key > root.key:
+        root.right = insert(root.right, key)
+    else:
+        print(f"Duplicate value {key} ignored!")
+    return root
+
+def search(root, key):
+    if root is None:
+        return False
+    if root.key == key:
+        return True
+    elif key < root.key:
+        return search(root.left, key)
+    else:
+        return search(root.right, key)
+
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.key, end=" ")
+        inorder(root.right)
+
+def preorder(root):
+    if root:
+        print(root.key, end=" ")
+        preorder(root.left)
+        preorder(root.right)
+
+def main():
+    root = None
+    while True:
+        print("\nBinary Search Tree Operations")
+        print("1. Insert a Node")
+        print("2. Search a Node")
+        print("3. Inorder Traversal")
+        print("4. Preorder Traversal")
+        print("5. Exit")
+
+        choice = int(input("Enter your choice: "))
+
+        if choice == 1:
+            val = int(input("Enter value to insert: "))
+            root = insert(root, val)
+            print("Node inserted successfully!")
+        elif choice == 2:
+            key = int(input("Enter value to search: "))
+            if search(root, key):
+                print(f"Node {key} found in BST.")
+            else:
+                print(f"Node {key} not found.")
+        elif choice == 3:
+            print("Inorder Traversal: ", end="")
+            inorder(root)
+            print()
+        elif choice == 4:
+            print("Preorder Traversal: ", end="")
+            preorder(root)
+            print()
+        elif choice == 5:
+            print("Exiting program...")
+            break
+        else:
+            print("Invalid choice! Please try again.")
+
+if __name__ == "__main__":
+    main()
